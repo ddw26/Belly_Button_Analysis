@@ -103,5 +103,34 @@ var trace = {
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout)
 
+    // Deliverable 2 Bubble Chart
+ // 1. Create trace for the bubble chart.
+ var bubbleTrace = {
+    x: sampleIds,
+    y: sampleValues,
+    text:sampleLabels,
+    mode: "markers",
+    marker: { 
+       color: sampleIds,
+       colorscale: "Earth",
+       size: sampleValues
+     }
+    };
+  
+    var bubbleData = [bubbleTrace];
+  
+   // 2. Create the layout for the bubble chart.
+   var bubbleLayout = {
+       title: `Bacteria Cultures Per Sample`,
+       showlegend: "false ",
+       xaxis: {title: "OTU ID"},
+  
+   };
+  
+   // 3. Use Plotly to plot the bar and buddle data with the layout.
+   Plotly.newPlot("bubble",bubbleData, bubbleLayout);
+  
+  
+
 });
 }
