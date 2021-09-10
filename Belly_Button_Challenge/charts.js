@@ -130,7 +130,46 @@ var trace = {
    // 3. Use Plotly to plot the bar and buddle data with the layout.
    Plotly.newPlot("bubble",bubbleData, bubbleLayout);
   
-  
+  // Deliverable 3 Gauge Chart
+ // 1. Create trace for the gauge chart.
+ // filter metadata on id selection, select first index to access data inside array 
+ console.log(data.metadata);
+
+ var idMeta = data.metadata.filter(Obj => Obj.id == sample)[0];
+ console.log(idMeta);
+
+ // Create variable that converts wash frequency to a floating number
+ idFrequency = parseFloat(idMeta.wfreq)
+
+ var gaugeData = [
+     {
+       domain: {x: [], y: []},
+       value: idFrequency,
+       title: {text:`Belly Button Washing Frequency<br><span style='font-size:15px'><br>Scrubs per Week</span>`},
+       type: "indicator",
+       mode: "gauge+number",
+       gauge:  {
+         axis: {range: [null, 10]},
+         bar: {color:"black"},
+         steps: [
+           {range: [0,2], color:"red"},
+           {range: [2,4], color:"orange"},
+           {range: [4,6], color:"yellow"},
+           {range: [6,8], color:"lightgreen"},
+           {range: [8,10], color:"darkgreen"},
+         ]
+       },
+     }
+ ];
+ 
+ // 2. Create layout for gauge chart.
+ var gaugeLayout = { 
+   width: 455, height: 450, margin: {t: 0, b: 0, l:0, r:0}
+ };
+
+ // 3. Use Plotly to plot the gauge data and layout.
+ Plotly.newPlot("gauge", gaugeData, gaugeLayout)
+
 
 });
 }
