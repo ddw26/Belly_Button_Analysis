@@ -7,7 +7,7 @@ Below is a completed dashboard from Roza. She has a completed panel for demograp
 
 # Link to Interactive Charts
 
-## <a href="http://localhost:8000/">CLICK HERE</a>
+## <a href="https://ddw26.github.io/">CLICK HERE</a>
 
 
 ![Interactive Charts](https://user-images.githubusercontent.com/77905862/132923744-235b3fac-afff-414d-9c23-77a5bde529bb.png)
